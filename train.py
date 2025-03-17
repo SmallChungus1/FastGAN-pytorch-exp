@@ -57,10 +57,10 @@ def train(args):
     checkpoint = args.ckpt
     batch_size = args.batch_size
     im_size = args.im_size
-    ndf = 64
-    ngf = 64
+    ndf = args.ndf
+    ngf = args.ngf
     nz = 256
-    nlr = 0.0002
+    nlr = args.nlr
     nbeta1 = 0.5
     use_cuda = True
     multi_gpu = True
@@ -198,6 +198,14 @@ if __name__ == "__main__":
     parser.add_argument('--ckpt', type=str, default='None', help='checkpoint weight path if have one')
     parser.add_argument('--workers', type=int, default=2, help='number of workers for dataloader')
     parser.add_argument('--save_interval', type=int, default=100, help='number of iterations to save model')
+
+    parser.add_argument('--nlr', type=int, default=0.0002, help='learning rate')
+    parser.add_argument('--ngf', type=int, default=64, help='number of channels for generator model')
+    parser.add_argument('--ndf', type=int, default=64, help='number of channels for discriminator model')
+
+
+
+    
 
     args = parser.parse_args()
     print(args)
