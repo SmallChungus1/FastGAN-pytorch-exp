@@ -199,7 +199,7 @@ if __name__ == "__main__":
     parser.add_argument('--workers', type=int, default=2, help='number of workers for dataloader')
     parser.add_argument('--save_interval', type=int, default=100, help='number of iterations to save model')
 
-    parser.add_argument('--nlr', type=int, default=0.0002, help='learning rate')
+    parser.add_argument('--nlr', type=float, default=0.0002, help='learning rate')
     parser.add_argument('--ngf', type=int, default=64, help='number of channels for generator model')
     parser.add_argument('--ndf', type=int, default=64, help='number of channels for discriminator model')
 
